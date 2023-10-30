@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct ab
+{
+    int p, q;
+};
+
+void input(int *a, int *b)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        cin >> a[i];
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        cin >> b[i];
+    }
+}
+
+ab output(int *a, int *b)
+{
+    int x = 0, y = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        if (a[i] > b[i])
+            x++;
+        else if (a[i] < b[i])
+            y++;
+    }
+    return {x, y};
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+
+    int a[3], b[3];
+    input(&a[0], &b[0]);
+
+    ab r = output(&a[0], &b[0]);
+    cout << r.p << ' ' << r.q << '\n';
+
+    return 0;
+}
